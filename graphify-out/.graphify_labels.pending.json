@@ -1,0 +1,23 @@
+{
+  "0": "package.json",
+  "1": "Arrow",
+  "2": "App.tsx",
+  "3": "react",
+  "4": "compilerOptions",
+  "5": "vite.config.ts",
+  "6": "figma-make-app",
+  "7": "EventServices.tsx",
+  "8": "ProjectDetail.tsx",
+  "9": "analyze-routes",
+  "10": "deploy",
+  "11": "deploy-preview",
+  "12": "dev",
+  "13": "format",
+  "14": "install",
+  "15": "langserver",
+  "16": "CLAUDE.md",
+  "17": "vite-env.d.ts",
+  "18": "About.tsx",
+  "19": "site.ts",
+  "20": "FeaturedProjects.tsx"
+}

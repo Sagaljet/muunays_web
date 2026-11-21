@@ -1,0 +1,15 @@
+{
+  "title": "MUUNAYS — LED Screens, Events & Branding",
+  "description": "MUUNAYS creates LED screens, event production, branding, signage and large-format printing in Hargeisa.",
+  "language": "en",
+  "icons": {
+    "icon": "/muunays-logo.png"
+  },
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": true,
+    "ignoreReducedMotion": false
+  }
+}

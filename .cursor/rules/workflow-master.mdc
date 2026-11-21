@@ -1,0 +1,22 @@
+---
+description: Autonomous, token-efficient engineering workflow using Graphify across all development stages.
+globs:
+alwaysApply: true
+---
+
+# Autonomous Development Workflow (Graphify + Token Guardrails)
+
+## 1. Codebase Navigation (Always First)
+- Before searching or reading raw source files, read `graphify-out/GRAPH_REPORT.md` (and query `graphify-out/graph.json` when tracing dependencies) to locate the exact files, classes, and functions involved.
+- Never scan or read entire directories blindly. Open only the specific files required for the current task.
+
+## 2. Stage-Specific Behavior (Execute Directly)
+- **Planning / Architecture:** Map out the affected modules, database tables, and data flow using the Graphify report. Unless I explicitly say "plan only," proceed straight to implementation after outlining the brief plan.
+- **New Feature / Building:** Identify target files from the graph, match existing `BakeryErp` naming, styling, and database patterns, and implement the full feature immediately.
+- **Debugging / Fixing:** Trace the exact call chain via the knowledge graph, pinpoint the root cause, and apply the fix directly.
+- **Refactoring:** Check all dependent callers in `graph.json` first, then update the shared code and all affected callers in one pass.
+
+## 3. Strict Guardrails
+- **Minimal Diffs:** Only edit code directly required by the request. Do not rewrite or reformat untouched code in the same file.
+- **Protected Scope:** Do not alter authentication, database connection configs, or unrelated modules unless explicitly asked.
+- **Concise Output:** Summarize what files were changed and any SQL or test steps needed in a few bullet points. Do not repeat full unchanged files back to me.
