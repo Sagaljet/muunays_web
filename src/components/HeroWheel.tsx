@@ -11,7 +11,7 @@ export function HeroWheel() {
     const count = faces.length
     if (!count) return
 
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
     const step = 360 / count
     const tiltX = 34
     const tiltZ = -12
@@ -30,7 +30,7 @@ export function HeroWheel() {
       }
     }
 
-    if (reduce) {
+    if (reduce.matches) {
       place(24)
       return
     }
@@ -45,7 +45,16 @@ export function HeroWheel() {
     }
     place(spin)
     frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
+    const stop = () => {
+      if (!reduce.matches) return
+      cancelAnimationFrame(frame)
+      place(24)
+    }
+    reduce.addEventListener('change', stop)
+    return () => {
+      cancelAnimationFrame(frame)
+      reduce.removeEventListener('change', stop)
+    }
   }, [])
 
   return (

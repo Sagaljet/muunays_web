@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { eventServices } from '@/data/site'
 import { ServiceIcon } from '@/components/ServiceIcon'
 
 export function EventServices() {
+  const [open, setOpen] = useState<string | null>(null)
+
   return (
     <section className="home-services" id="services" data-reveal>
       <h2 className="home-services-title">
@@ -11,7 +14,16 @@ export function EventServices() {
       <ul className="home-services-grid">
         {eventServices.map((service) => (
           <li key={service.n}>
-            <article className="svc-card" tabIndex={0}>
+            <article
+              className={open === service.n ? 'svc-card is-flipped' : 'svc-card'}
+              tabIndex={0}
+              onClick={() => setOpen(open === service.n ? null : service.n)}
+              onKeyDown={(event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return
+                event.preventDefault()
+                setOpen(open === service.n ? null : service.n)
+              }}
+            >
               <div className="svc-card-inner">
                 <div className="svc-card-face svc-card-front">
                   <span className="svc-card-icon">

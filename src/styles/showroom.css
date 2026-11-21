@@ -381,11 +381,13 @@
   .counter-stage img { width: min(100%, 340px); }
   .scene-runway { height: 320vh; }
   .runway-pin { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
-  .floor-pivot { transform: rotateX(64deg) scale(.86); }
+  .floor-pivot { transform: rotateX(64deg) scale(.72); }
   .scene-runway .scene-copy { justify-content: flex-start; padding: 8px 6vw 28px; }
-  .banner-stage { gap: 16px; justify-content: space-between; }
+  .banner-stage { align-items: flex-end; gap: 12px; justify-content: center; }
+  .banner-front,
+  .banner-back { flex: 1 1 0; min-width: 0; }
   .banner-front img,
-  .banner-back img { height: 52vh; }
+  .banner-back img { height: auto; max-height: 42vh; object-fit: contain; width: 100%; }
   .scene-banners .scene-copy { order: -1; padding-bottom: 0; }
   .scene-lights { align-items: stretch; display: flex; flex-direction: column; padding: 108px 6vw 40px; }
   .scene-lights .scene-copy { padding: 0 0 20px; }

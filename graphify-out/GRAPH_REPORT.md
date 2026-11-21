@@ -1,14 +1,19 @@
-# Graph Report - Muunays_website  (2026-11-17)
+# Graph Report - Muunays_website  (2026-11-21)
 
 ## Corpus Check
-- 53 files · ~10,511 words
+- 53 files · ~10,590 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 9 file(s) not represented in the graph (top: .css 5, (none) 2, .mdc 1)
 
 ## Summary
-- 198 nodes · 386 edges · 21 communities (11 shown, 10 thin omitted)
+- 198 nodes · 387 edges · 21 communities (11 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `00f6c454`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - package.json
@@ -26,7 +31,7 @@
 ## God Nodes (most connected - your core abstractions)
 1. `Arrow()` - 39 edges
 2. `App()` - 20 edges
-3. `react` - 19 edges
+3. `react` - 20 edges
 4. `compilerOptions` - 17 edges
 5. `useSceneProgress()` - 11 edges
 6. `ProjectDetail()` - 9 edges
@@ -38,14 +43,14 @@
 ## Surprising Connections (you probably didn't know these)
 - `QuickView()` --calls--> `Arrow()`  [EXTRACTED]
   src/components/QuickView.tsx → src/components/Arrow.tsx
-- `App()` --calls--> `useReveal()`  [EXTRACTED]
-  src/App.tsx → src/hooks/useReveal.ts
 - `App()` --calls--> `EventServices()`  [EXTRACTED]
   src/App.tsx → src/sections/EventServices.tsx
-- `App()` --calls--> `FeaturedProjects()`  [EXTRACTED]
-  src/App.tsx → src/sections/FeaturedProjects.tsx
-- `App()` --calls--> `HomeHero()`  [EXTRACTED]
-  src/App.tsx → src/sections/HomeHero.tsx
+- `Header()` --calls--> `Arrow()`  [EXTRACTED]
+  src/components/Header.tsx → src/components/Arrow.tsx
+- `ImageFrame()` --calls--> `Arrow()`  [EXTRACTED]
+  src/components/ImageFrame.tsx → src/components/Arrow.tsx
+- `EventPlanner()` --calls--> `Arrow()`  [EXTRACTED]
+  src/sections/EventPlanner.tsx → src/components/Arrow.tsx
 
 ## Import Cycles
 - None detected.
@@ -102,8 +107,8 @@ Nodes (4): featuredProjects, clamp01(), easeOutCubic(), FeaturedProjects()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `package.json`, `Arrow`, `App.tsx`, `ProjectDetail.tsx`, `site.ts`, `FeaturedProjects.tsx`?**
-  _High betweenness centrality (0.279) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `package.json`, `Arrow`, `App.tsx`, `EventServices.tsx`, `ProjectDetail.tsx`, `site.ts`, `FeaturedProjects.tsx`?**
+  _High betweenness centrality (0.283) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.07954545454545454 - nodes in this community are weakly interconnected._
 - **Why does `Arrow()` connect `Arrow` to `site.ts`, `ProjectDetail.tsx`, `App.tsx`, `react`?**

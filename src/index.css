@@ -278,13 +278,16 @@ footer { background: #080808; color: white; display: grid; gap: 60px 6vw; grid-t
 .modal-thumbs img { height: 100%; object-fit: cover; }
 
 @media (max-width: 900px) {
-  .nav { height: 72px; position: fixed; }
+  .nav { height: 72px; position: fixed; z-index: 40; }
+  .nav.is-scrolled { backdrop-filter: none; }
+  .logo { position: relative; z-index: 42; }
   .brand img, .nav.is-scrolled .brand img { height: 40px; width: auto; }
-  .menu-button { background: transparent; border: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px; position: fixed; right: 4vw; top: 16px; z-index: 40; }
+  .menu-button { background: transparent; border: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px; position: fixed; right: 4vw; top: 16px; z-index: 42; }
   .menu-button span { background: #fff; height: 2px; width: 26px; }
-  .nav.is-scrolled .menu-button span { background: var(--ink); }
-  .nav-links { align-items: flex-start; background: white; color: var(--ink); flex-direction: column; inset: 0; justify-content: center; opacity: 0; padding: 20vw 8vw; pointer-events: none; position: fixed; transform: translateY(-15px); transition: .25s; }
-  .nav-links.is-open { opacity: 1; pointer-events: auto; transform: none; }
+  .nav.is-scrolled .menu-button span,
+  .menu-button[aria-expanded='true'] span { background: var(--ink); }
+  .nav-links { align-items: flex-start; background: #fff; bottom: 0; color: var(--ink); flex-direction: column; gap: 16px; height: 100dvh; justify-content: flex-start; left: 0; opacity: 0; overflow-y: auto; overscroll-behavior: contain; padding: 96px 8vw 48px; pointer-events: none; position: fixed; right: 0; top: 0; transform: none; transition: opacity .2s ease; z-index: 30; }
+  .nav-links.is-open { opacity: 1; pointer-events: auto; }
   .nav-links > a { font-family: Manrope; font-size: 30px; }
   .services-menu { align-self: auto; display: block; }
   .services-menu > a { font-family: Manrope; font-size: 30px; }
